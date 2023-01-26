@@ -1,0 +1,29 @@
+<hr>
+<div class="list">
+    <div class="name">
+        {% if action.picture %}
+            <img src="upload/{{ action.picture }}" alt="Picture of {{ action.name }}">
+        {% endif %}
+
+        <div>
+            <h5>{{ action.name }}</h5>
+            <p style="font-size: 14px;">{{ action.description }}</p>
+        </div>
+
+    </div>
+    <div class="status">
+        {{ action.status }}
+    </div>
+    <div class="end-date">
+        {{ action.date|date('y-m-d') }}
+    </div>
+    <div class="action">
+        <a class="btn btn-icon btn-primary" href="{{ path('edit_action_app', {'id': action.id})}}"><i class="fa fa-edit"></i></a>
+        <form method="POST" action="{{ path('remove_action_app')}}">
+            <input type="hidden" name="token" value="{{ csrf_token('delete-item'~action.id) }}"/>
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="id" value="{{ action.id }}"/>
+            <button class="btn btn-icon btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+        </form>
+    </div>
+</div>

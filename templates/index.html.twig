@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="title">
+        <h2>My tasks</h2>
+        <h5><a href="{{ path('add_action_app') }}"><i class="fa fa-add"></i> Add new task</a></h5>
+    </div>
+
+    <div class="list">
+
+        <div class="title-section">
+            Name
+        </div>
+        <div class="title-section" style="text-align:center">
+            Status
+        </div>
+        <div class="title-section" style="text-align:center">
+            End date
+        </div>
+        <div class="title-section" style="text-align:center">
+            Action
+        </div>
+    </div>
+
+    {% for action in actions %}
+        {{ component('action-item', {action : action}) }}
+    {% endfor %}
+
+{% endblock %}

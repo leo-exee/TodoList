@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h3></h3>
+
+    {{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+
+
+    <div class="form-group">
+        {{ form_row(form.name) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.date) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.description) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.picture) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.status) }}
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+    <a style="margin-top: 10px;" class="btn btn-danger" href="{{ path("app_index") }}"><i class="fa fa-close"></i> Cancel</a>
+
+    {{ form_end(form) }}
+{% endblock %}
