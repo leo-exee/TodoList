@@ -48,7 +48,7 @@ class TodoController extends AbstractController
             }
 
             return $this->render('form.html.twig', [
-                'form' => $form->createView()
+                'form' => $form->createView(), 'action' => $action
             ]);
         }
 
@@ -90,7 +90,7 @@ class TodoController extends AbstractController
             }
 
             return $this->render('form.html.twig', [
-                'form' => $form->createView()
+                'form' => $form->createView(), 'action' => $action
             ]);
         }
 

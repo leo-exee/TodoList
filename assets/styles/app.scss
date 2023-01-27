@@ -31,7 +31,7 @@ nav {
 }
 
 .alert-zone {
-  position: absolute;
+  position: fixed;
   left: 10px;
   bottom: 30px;
 }
@@ -75,6 +75,7 @@ nav {
 
 .name {
   display: flex;
+  align-items: center;
 
   img {
     width: 75px;
@@ -85,6 +86,8 @@ nav {
 }
 
 .status, .end-date, .action {
+  border-left: 1px solid #ccc;
+  font-weight: 500;
   text-align:center;
   display: flex;
   align-items: center;

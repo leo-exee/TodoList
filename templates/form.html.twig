@@ -2,7 +2,11 @@
 
 {% block body %}
 
-    <h3></h3>
+    {% if action.name != null %}
+        <h3>Edit {{ action.name }}</h3>
+        {% else %}
+        <h3>Create a new task</h3>
+    {% endif %}
 
     {{ form_start(form) }}
     <div class="my-custom-class-for-errors">

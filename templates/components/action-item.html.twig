@@ -12,7 +12,13 @@
 
     </div>
     <div class="status">
-        {{ action.status }}
+        {% if action.status == 'Completed' %}
+            <span style="color:#eb3b5a">{{ action.status }}</span>
+        {% elseif action.status == 'To do'%}
+            <span style="color:#20bf6b">{{ action.status }}</span>
+        {% else %}
+            <span style="color:#f7b731">{{ action.status }}</span>
+        {% endif %}
     </div>
     <div class="end-date">
         {{ action.date|date('y-m-d') }}
