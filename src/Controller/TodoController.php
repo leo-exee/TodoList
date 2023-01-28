@@ -12,6 +12,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class TodoController extends AbstractController
 {
 
+    /**
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
+     * @return Response
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
     #[Route('/add', name: 'add_action_app')]
     public function addAction(Request $request, EntityManagerInterface $entityManager) : Response
     {
@@ -56,6 +63,14 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('app_index');
     }
 
+    /**
+     * @param int $id
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
+     * @return Response
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
     #[Route('/edit/{id}', name: 'edit_action_app')]
     public function editAction(int $id, Request $request, EntityManagerInterface $entityManager) : Response
     {
@@ -98,6 +113,13 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('app_index');
     }
 
+    /**
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
+     * @return Response
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
     #[Route('/remove', name: 'remove_action_app')]
     public function removeAction(Request $request, EntityManagerInterface $entityManager) : Response
     {
